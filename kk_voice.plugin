@@ -1,0 +1,11 @@
+#!name=KK键盘变声
+#!desc=解锁无限变声功能
+#!author=老大
+#!icon=https://raw.githubusercontent.com/Loon0x00/Loon-Gallery/master/Icon/kk.png
+
+[Rewrite]
+^https?:\/\/kk\.weshine\.im\/v1\.0\/text2voice\/(checkCount|consumeCount) url jsonjq-response-body .data.totalCount = 999 | .data.currCount = 999
+^https?:\/\/kk\.weshine\.im\/v1\.0\/text2voice\/createTtsAudio url jsonjq-response-body .data.freeCount = 999
+
+[MITM]
+hostname = kk.weshine.im
